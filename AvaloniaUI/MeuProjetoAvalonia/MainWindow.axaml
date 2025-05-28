@@ -1,0 +1,50 @@
+<Window xmlns="https://github.com/avaloniaui"
+    	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    	x:Class="MeuProjetoAvalonia.MainWindow"
+    	Title="Primeiro Projeto com Avalonia UI" Width="400" Height="300">
+  <StackPanel Margin="10">
+
+	<TextBlock Text="Conversão do Paixão!"
+           	FontSize="24"
+           	HorizontalAlignment="Center"
+           	Margin="0 0 0 10"/>
+   
+	<ComboBox x:Name="conversionTypes"
+			Width="200"
+			HorizontalAlignment="Center"
+         	Margin="0 0 0 10"
+			SelectedIndex="0">
+	<ComboBoxItem IsEnabled="False" Content="Selecione uma opção..."/>
+  	<ComboBoxItem Content="Celsius - Farenheit" />
+  	<ComboBoxItem Content="Farenheit - Celsius" />
+  	<ComboBoxItem Content="Celsius - Kelvin" />
+  	<ComboBoxItem Content="Kelvin - Celsius" />
+  	<ComboBoxItem Content="Metros - Pés" />
+  	<ComboBoxItem Content="Pés - Metros" />
+  	<ComboBoxItem Content="Quilômetros - Milhas" />
+  	<ComboBoxItem Content="Milhas - Quilômetros" />
+	<ComboBoxItem Content="Gramas - Onças" />
+  	<ComboBoxItem Content="Onças - Gramas" />
+  	<ComboBoxItem Content="Quilogramas - Libras" />
+  	<ComboBoxItem Content="Libras - Quilogramas" />
+  	<ComboBoxItem Content="Litros - Galões" />
+  	<ComboBoxItem Content="Galões - Litros" />
+  	<ComboBoxItem Content="Mililitros - Onças Fluidas" />
+  	<ComboBoxItem Content="Onças Fluidas - Mililitros" />
+	</ComboBox>
+	
+	<TextBox x:Name="txtInput"
+         	Watermark="Valor a converter"
+         	Margin="0 0 0 10"/>
+
+	<TextBox x:Name="txtOutput"
+         	Watermark="Valor convertido"
+			IsReadOnly="True"
+         	Margin="0 0 0 10"/>
+   
+	<Button Content="Clique aqui!"
+        	HorizontalAlignment="Center"
+        	Click="BtnClique_Click"/>
+
+  </StackPanel>
+</Window>
