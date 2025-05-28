@@ -20,7 +20,7 @@ namespace MeuProjetoAvalonia
 			var txtOutput = this.FindControl<TextBox>("txtOutput");
 
 			// Recupera e verifica o valor digitado no TextBox
-		b	if (!double.TryParse(txtBox.Text, out double valor))
+			if (!double.TryParse(txtBox.Text, out double valor))
 			{
 				txtOutput.Text = "Valor inválido"; // Exibe erro se a conversão falhar
 				return;
