@@ -3,18 +3,16 @@ using System.IO;
 
 var filePath = "prize.json";
 var str = File.ReadAllText(filePath);
-var regex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()+=_\-{}\[\]:;""'?<>,.]).{7,16}$");
-
-
+var regex = new Regex(@"""category"":""economics"",""laureates"":\[.+?""firstname"":(?<nome>""[^""]+"")[^\]]+\]");
 
 // Imprime matches
 foreach (Match match in regex.Matches(str))
 {
     foreach (Group group in match.Groups)
-    {
-        if (group.Success)
+    {        
+        if (group.Name == "nome")
         {
-            Console.WriteLine(group.Value);
+            Console.WriteLine($"NOME: {group.Value}");
         }
     }
 }
