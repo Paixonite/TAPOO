@@ -1,11 +1,15 @@
 using System;
 
- var builder = WebApplication.CreateBuilder(args);
- var app = builder.Build();
+var builder = WebApplication.CreateBuilder(args);
 
- // unidade: "celsius", "kelvin" ou "fahrenheit"
- app.MapGet("/temperatura/{unidade}", (string unidade) =>
- {
+// Adicione esta linha ANTES de app.Build()
+builder.WebHost.UseUrls("http://localhost:5000");
+
+var app = builder.Build();
+
+// unidade: "celsius", "kelvin" ou "fahrenheit"
+app.MapGet("/temperatura/{unidade}", (string unidade) =>
+{
  	// 1) obter hora atual em horas totais (ex.: 14.5 = 14h30m)
  	double t = DateTime.Now.TimeOfDay.TotalHours;
 
